@@ -1,0 +1,27 @@
+<html>
+<head>
+
+</head>
+
+<body>
+
+<table>
+    <thead>
+          <tr>
+            <th>Name</th>
+            <th>Salary </th>
+          </tr>
+  </thead>
+    <tbody>
+        {% for object in query_set %}
+            <tr>
+                 <td> {{object.name | upper}}</td>
+                  <td>{{object.salary}}</td>
+                  <td><a href="{% url 'detailed_view' object.pk %}" >Detailed View</a></td>
+
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
